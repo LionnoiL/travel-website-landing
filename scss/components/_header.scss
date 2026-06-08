@@ -1,0 +1,91 @@
+@use '../config' as *;
+@use '../base/shared' as b;
+
+.header {
+  max-width: 1440px;
+  position: relative;
+  margin: 0 auto;
+
+  .container {
+    @include b.container(row);
+    padding: 48px 140px 20px 140px;
+  }
+
+  &__nav {
+    margin-left: auto;
+    margin-right: 86px;
+
+    .list {
+      @include b.container(row);
+      gap: 60px;
+    }
+
+    .link {
+      color: $first-color;
+      font-family: $second-family;
+      font-size: 17px;
+    }
+  }
+
+  &__auth-block {
+    @include b.container(row);
+    gap: 30px;
+    color: $first-color;
+    margin-right: 42px;
+
+    .login {
+      font-family: $second-family;
+      font-size: 17px;
+      font-weight: 500;
+    }
+
+    .sign {
+      font-family: $second-family;
+      font-size: 17px;
+      font-weight: 500;
+      border-radius: 5px;
+      border: 1px solid $first-color;
+      padding: 9px 22px;
+    }
+  }
+
+  &__decor-1 {
+    @include b.absolute(0, 0);
+    fill: #fff1da;
+    z-index: -10;
+  }
+
+  &__lang-block {
+    position: relative;
+
+    .lang-btn {
+      @include b.container(row);
+      gap: 10px;
+      color: $first-color;
+      font-family: $third-family;
+      font-size: 17px;
+      font-weight: 500;
+      stroke: $first-color;
+      stroke-width: 1px;
+      fill: transparent;
+    }
+
+    .lang-menu {
+      color: $first-color;
+      position: absolute;
+      top: 24px;
+      left: 0;
+
+      a {
+        color: $first-color;
+        font-family: $third-family;
+        font-size: 17px;
+        font-weight: 500;
+      }
+
+      .active {
+        display: none;
+      }
+    }
+  }
+}

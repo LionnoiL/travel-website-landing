@@ -3,7 +3,108 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Volkhov:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    >
+    <link href="./css/style.css" rel="stylesheet">
+
     <title>Travel Website</title>
   </head>
-  <body></body>
+  <body>
+    <header class="header">
+      <svg class="header__decor-1" width="766" height="872">
+        <use xlink:href="./images/icons.svg#icon-header-decore"></use>
+      </svg>
+
+      <div class="container">
+        <svg width="115" height="34">
+          <use xlink:href="./images/icons.svg#icon-logo"></use>
+        </svg>
+        <nav class="header__nav">
+          <ul class="list">
+            <li class="item">
+              <a class="link" href="#">Desitnations</a>
+            </li>
+            <li class="item">
+              <a class="link" href="#">Hotels</a>
+            </li>
+            <li class="item">
+              <a class="link" href="#">Flights</a>
+            </li>
+            <li class="item">
+              <a class="link" href="#">Bookings</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="header__auth-block">
+          <button class="login" type="button" id="login-btn">Login</button>
+          <button class="sign" type="button" id="sign-btn">Sign up</button>
+        </div>
+        <div class="header__lang-block">
+          <button
+            type="button"
+            class="lang-btn"
+            aria-expanded="false"
+            aria-haspopup="true"
+          >
+            EN
+            <svg class="arrow" aria-hidden="true" width="9" height="5">
+              <use xlink:href="./images/icons.svg#icon-list-down"></use>
+            </svg>
+          </button>
+
+          <ul class="lang-menu visually-hidden" role="menu">
+            <li role="none">
+              <a href="#" role="menuitem" class="active">EN</a>
+            </li>
+            <li role="none"><a href="#" role="menuitem">UA</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <section class="hero">
+      <div class="container">
+        <div class="hero__title-block">
+          <p class="top-title">Best Destinations around the world</p>
+          <h1 class="main-title">Travel, enjoy and live a new and full life</h1>
+          <p class="description">
+            Built Wicket longer admire do barton vanity itself do in it.
+            Preferred to sportsmen it engrossed listening. Park gate sell they
+            west hard for the.
+          </p>
+          <div class="buttons-block">
+            <button class="find" type="button">Find out more</button>
+            <button class="play" type="button">
+              <span class="round-btn">
+                <svg width="15" height="15">
+                  <use xlink:href="./images/icons.svg#icon-play"></use>
+                </svg>
+              </span>
+              Play Demo
+            </button>
+          </div>
+        </div>
+        <div class="hero__image-wraper">
+          <img
+            class="hero__main-img"
+            srcset="./images/traveller.webp 1x, ./images/traveller_x2.webp 2x"
+            src="./images/traveller.webp"
+            alt="trsveller"
+            width="765"
+            height="764"
+          >
+          <svg class="hero__plane-1" width="137" height="95">
+            <use xlink:href="./images/icons.svg#icon-plane"></use>
+          </svg>
+          <svg class="hero__plane-2" width="137" height="95">
+            <use xlink:href="./images/icons.svg#icon-plane"></use>
+          </svg>
+        </div>
+      </div>
+    </section>
+  </body>
 </html>
