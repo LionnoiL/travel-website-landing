@@ -2,22 +2,39 @@
 @use '../base/shared' as b;
 
 .header {
-  max-width: 1440px;
-  position: relative;
-  margin: 0 auto;
+  @include b.section();
 
   .container {
     @include b.container(row);
-    padding: 48px 140px 20px 140px;
+    padding: 48px 20px 20px 20px;
+
+    @include b.respond-to('desktop') {
+      padding-inline: 30px;
+    }
+
+    @include b.respond-to('desktop-xl') {
+      padding-inline: 140px;
+    }
   }
 
   &__nav {
     margin-left: auto;
-    margin-right: 86px;
+    display: none;
+
+    @include b.respond-to('tablet') {
+      display: block;
+    }
 
     .list {
       @include b.container(row);
-      gap: 60px;
+
+      @include b.respond-to('tablet') {
+        gap: 20px;
+      }
+
+      @include b.respond-to('desktop') {
+        gap: 60px;
+      }
     }
 
     .link {
@@ -29,9 +46,20 @@
 
   &__auth-block {
     @include b.container(row);
-    gap: 30px;
+    gap: 10px;
     color: $first-color;
-    margin-right: 42px;
+    margin-right: 22px;
+    margin-left: auto;
+
+    @include b.respond-to('tablet') {
+      margin-left: 20px;
+      gap: 15px;
+    }
+
+    @include b.respond-to('desktop') {
+      margin-left: 80px;
+      margin-right: 42px;
+    }
 
     .login {
       font-family: $second-family;
@@ -45,7 +73,11 @@
       font-weight: 500;
       border-radius: 5px;
       border: 1px solid $first-color;
-      padding: 9px 22px;
+      padding: 9px 10px;
+
+      @include b.respond-to('tablet') {
+        padding: 9px 22px;
+      }
     }
   }
 
@@ -53,6 +85,16 @@
     @include b.absolute(0, 0);
     fill: #fff1da;
     z-index: -10;
+
+    @include b.respond-to('tablet') {
+      width: 536px;
+      height: 610px;
+    }
+
+    @include b.respond-to('desktop') {
+      width: 766px;
+      height: 872px;
+    }
   }
 
   &__lang-block {

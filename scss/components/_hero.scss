@@ -2,21 +2,38 @@
 @use '../base/shared' as b;
 
 .hero {
-  max-width: 1440px;
-  margin: 0 auto;
-  position: relative;
+  @include b.section();
 
   .container {
-    @include b.container(row);
-    padding: 0 110px 0 150px;
+    @include b.container(column);
+    padding: 0 20px 0 20px;
     height: 764px;
+
+    @include b.respond-to('desktop') {
+      flex-direction: row;
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+
+    @include b.respond-to('desktop-xl') {
+      padding-left: 140px;
+      padding-right: 140px;
+    }
   }
 
   &__title-block {
     @include b.container(column);
     gap: 30px;
-    max-width: 545px;
+    max-width: 390px;
     align-items: flex-start;
+
+    @include b.respond-to('tablet') {
+      max-width: 690px;
+    }
+
+    @include b.respond-to('desktop') {
+      max-width: 545px;
+    }
 
     .top-title {
       color: #df6951;
@@ -29,10 +46,15 @@
     .main-title {
       color: $first-color;
       font-family: $font4;
-      font-size: 84px;
+      font-size: 40px;
       font-weight: 700;
-      line-height: 89px;
+      line-height: 50px;
       letter-spacing: -3.36px;
+
+      @include b.respond-to('desktop') {
+        font-size: 84px;
+        line-height: 89px;
+      }
     }
 
     .description {
@@ -49,7 +71,7 @@
       gap: 44px;
 
       .find {
-        padding: 19px 26px;
+        padding: 10px 8px;
         color: $white;
         font-family: $third-family;
         font-size: 18px;
@@ -57,6 +79,10 @@
         border-radius: 10px;
         background: $yellow;
         box-shadow: 0 20px 35px 0 rgba(241, 165, 1, 0.15);
+
+        @include b.respond-to('tablet') {
+          padding: 19px 26px;
+        }
       }
 
       .play {
@@ -68,8 +94,8 @@
         line-height: normal;
 
         .round-btn {
-          width: 52px;
-          height: 52px;
+          width: 42px;
+          height: 42px;
           display: flex;
           justify-content: center;
           align-items: center;
@@ -77,6 +103,11 @@
           border-radius: 100%;
           background: #df6951;
           box-shadow: 0 15px 30px 0 rgba(223, 105, 81, 0.3);
+
+          @include b.respond-to('tablet') {
+            width: 52px;
+            height: 52px;
+          }
         }
       }
     }
@@ -89,19 +120,37 @@
   }
 
   &__main-img {
-    @include b.absolute(0, 40px);
+    position: absolute;
+    top: 0;
+    right: -45px;
     z-index: -1;
+
+    @include b.respond-to('tablet') {
+      right: 90px;
+      width: 765px;
+      height: 764px;
+    }
+
+    @include b.respond-to('desktop') {
+      right: -40px;
+    }
+
+    @include b.respond-to('desktop-xl') {
+      right: 40px;
+    }
   }
 
   &__plane-1 {
     position: absolute;
     top: 60px;
     left: -25px;
+    z-index: -2;
   }
 
   &__plane-2 {
     position: absolute;
     top: 160px;
     right: 20px;
+    z-index: -2;
   }
 }
